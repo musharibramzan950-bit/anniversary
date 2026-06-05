@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Cuddle Bum Amna 🐰</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff6b9d;
+    --soft-pink: #ffd6e7;
+    --blush: #ffe4ef;
+    --cream: #fff8f0;
+    --deep-rose: #c9184a;
+    --lilac: #dda0dd;
+    --soft-purple: #f3e5f5;
+    --gold: #ffd700;
+    --text: #3d1a24;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🌸%3C/text%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  /* FLOATING HEARTS BG */
+  .hearts-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .heart-float {
+    position: absolute;
+    animation: floatUp linear infinite;
+    opacity: 0;
+    font-size: 20px;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* HERO SECTION */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fff0f8 0%, #ffe4ef 50%, #f8f0ff 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,107,157,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(221,160,221,0.15) 0%, transparent 50%);
+  }
+
+  /* BUNNY ANIMATION */
+  .bunny-wrapper {
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 0 auto 30px;
+    animation: bunnyBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bunnyBounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .bunny svg {
+    width: 200px;
+    height: 220px;
+    filter: drop-shadow(0 10px 30px rgba(255,107,157,0.3));
+  }
+
+  /* ear wiggle */
+  .ear-left { animation: wiggleLeft 3s ease-in-out infinite; transform-origin: bottom center; }
+  .ear-right { animation: wiggleRight 3s ease-in-out infinite 0.3s; transform-origin: bottom center; }
+
+  @keyframes wiggleLeft {
+    0%, 80%, 100% { transform: rotate(0deg); }
+    85% { transform: rotate(-15deg); }
+    90% { transform: rotate(5deg); }
+    95% { transform: rotate(-10deg); }
+  }
+
+  @keyframes wiggleRight {
+    0%, 80%, 100% { transform: rotate(0deg); }
+    85% { transform: rotate(15deg); }
+    90% { transform: rotate(-5deg); }
+    95% { transform: rotate(10deg); }
+  }
+
+  .heart-eyes { animation: heartBeat 1.5s ease-in-out infinite; }
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* TITLE */
+  .main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--deep-rose);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 0 rgba(255,107,157,0.2);
+    animation: titleGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes titleGlow {
+    0%, 100% { text-shadow: 2px 2px 0 rgba(255,107,157,0.2); }
+    50% { text-shadow: 0 0 30px rgba(201,24,74,0.4), 2px 2px 0 rgba(255,107,157,0.2); }
+  }
+
+  .subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: var(--pink);
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .date-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--pink), var(--deep-rose));
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(255,107,157,0.4);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(255,107,157,0.4); }
+    50% { box-shadow: 0 4px 40px rgba(255,107,157,0.7); }
+  }
+
+  /* LETTER SECTION */
+  .letter-section {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  .letter-card {
+    background: white;
+    border-radius: 24px;
+    padding: 50px 45px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(255,107,157,0.15), 0 0 0 1px rgba(255,107,157,0.1);
+    transform: rotate(-0.5deg);
+    transition: transform 0.3s ease;
+  }
+
+  .letter-card:hover { transform: rotate(0deg) scale(1.01); }
+
+  .letter-card::before {
+    content: '💌';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    filter: drop-shadow(0 4px 8px rgba(255,107,157,0.3));
+  }
+
+  .letter-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(255,107,157,0.08) 31px,
+      rgba(255,107,157,0.08) 32px
+    );
+    border-radius: 24px;
+    pointer-events: none;
+  }
+
+  .letter-text {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 2;
+    color: #4a1a2c;
+    position: relative;
+    z-index: 1;
+  }
+
+  .letter-text .highlight {
+    color: var(--deep-rose);
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+
+  .letter-text .urdu-touch {
+    font-family: 'Caveat', cursive;
+    color: var(--pink);
+    font-style: italic;
+  }
+
+  /* GIFTS SECTION */
+  .gifts-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--cream) 0%, #fff0f8 100%);
+  }
+
+  .section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--deep-rose);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .gift-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255,107,157,0.12);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: default;
+  }
+
+  .gift-card:hover {
+    transform: translateY(-8px) rotate(2deg);
+    border-color: var(--pink);
+    box-shadow: 0 20px 50px rgba(255,107,157,0.25);
+  }
+
+  .gift-card:nth-child(even):hover { transform: translateY(-8px) rotate(-2deg); }
+
+  .gift-emoji { font-size: 3rem; display: block; margin-bottom: 12px; }
+
+  .gift-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--deep-rose);
+    font-weight: 700;
+  }
+
+  .gift-desc {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 4px;
+  }
+
+  .gift-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+
+  .tag-gave { background: #ffe4ef; color: var(--deep-rose); }
+  .tag-got { background: #e8f5e9; color: #2e7d32; }
+
+  /* CALENDAR SECTION */
+  .calendar-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .calendar-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(255,107,157,0.2);
+  }
+
+  .cal-header {
+    background: linear-gradient(135deg, var(--pink), var(--deep-rose));
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+  }
+
+  .cal-nav {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .cal-nav:hover { background: rgba(255,255,255,0.4); }
+
+  .cal-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--blush);
+    padding: 10px 0;
+  }
+
+  .cal-day-name {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--deep-rose);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px;
+    gap: 4px;
+  }
+
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: default;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .cal-day.other-month { color: #ddd; }
+
+  .cal-day.today {
+    background: var(--blush);
+    color: var(--deep-rose);
+    font-weight: 700;
+  }
+
+  .cal-day.anniversary {
+    background: linear-gradient(135deg, var(--pink), var(--deep-rose));
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255,107,157,0.5);
+    animation: annivPulse 2s ease-in-out infinite;
+  }
+
+  .cal-day.anniversary::after {
+    content: '💕';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 12px;
+  }
+
+  @keyframes annivPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(255,107,157,0.5); transform: scale(1); }
+    50% { box-shadow: 0 4px 30px rgba(255,107,157,0.8); transform: scale(1.1); }
+  }
+
+  .cal-legend {
+    padding: 16px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    border-top: 1px solid var(--blush);
+    font-size: 0.8rem;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--deep-rose));
+  }
+
+  .legend-dot.today-dot { background: var(--blush); border: 2px solid var(--pink); }
+
+  /* MEMORY SECTION */
+  .memory-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #fff0f8, #f8f0ff);
+    text-align: center;
+  }
+
+  .memory-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(255,107,157,0.15);
+    position: relative;
+  }
+
+  .memory-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 8rem;
+    color: rgba(255,107,157,0.1);
+    font-family: 'Dancing Script', cursive;
+    line-height: 1;
+  }
+
+  .memory-text {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    line-height: 1.8;
+    color: #4a1a2c;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SPARKLE ANIMATION */
+  .sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: sparkleAnim 1.5s ease-in-out forwards;
+    z-index: 999;
+    font-size: 20px;
+  }
+
+  @keyframes sparkleAnim {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+    100% { transform: scale(0) rotate(360deg) translateY(-50px); opacity: 0; }
+  }
+
+  /* FOOTER */
+  .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--deep-rose), #8b0024);
+    color: white;
+  }
+
+  .footer-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.4;
+  }
+
+  .footer-sub {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .letter-card { padding: 40px 25px; }
+    .gifts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating Hearts Background -->
+<div class="hearts-bg" id="heartsContainer"></div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="bunny-wrapper">
+    <div class="bunny">
+      <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Ear -->
+        <g class="ear-left">
+          <ellipse cx="72" cy="52" rx="18" ry="42" fill="#ffb3d1"/>
+          <ellipse cx="72" cy="55" rx="10" ry="33" fill="#ff6b9d"/>
+        </g>
+        <!-- Right Ear -->
+        <g class="ear-right">
+          <ellipse cx="128" cy="52" rx="18" ry="42" fill="#ffb3d1"/>
+          <ellipse cx="128" cy="55" rx="10" ry="33" fill="#ff6b9d"/>
+        </g>
+        <!-- Body -->
+        <ellipse cx="100" cy="165" rx="52" ry="48" fill="#ffe0f0"/>
+        <!-- Head -->
+        <circle cx="100" cy="105" r="52" fill="#ffe0f0"/>
+        <!-- Cheeks -->
+        <ellipse cx="76" cy="118" rx="14" ry="9" fill="#ffb3d1" opacity="0.7"/>
+        <ellipse cx="124" cy="118" rx="14" ry="9" fill="#ffb3d1" opacity="0.7"/>
+        <!-- Eyes - hearts -->
+        <g class="heart-eyes">
+          <text x="82" y="108" font-size="16" text-anchor="middle">💗</text>
+          <text x="118" y="108" font-size="16" text-anchor="middle">💗</text>
+        </g>
+        <!-- Nose -->
+        <ellipse cx="100" cy="120" rx="5" ry="3.5" fill="#ff6b9d"/>
+        <!-- Mouth -->
+        <path d="M93 126 Q100 133 107 126" stroke="#ff6b9d" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Whiskers -->
+        <line x1="60" y1="120" x2="88" y2="122" stroke="#ffb3d1" stroke-width="1.5"/>
+        <line x1="60" y1="127" x2="88" y2="126" stroke="#ffb3d1" stroke-width="1.5"/>
+        <line x1="112" y1="122" x2="140" y2="120" stroke="#ffb3d1" stroke-width="1.5"/>
+        <line x1="112" y1="126" x2="140" y2="127" stroke="#ffb3d1" stroke-width="1.5"/>
+        <!-- Tummy -->
+        <ellipse cx="100" cy="168" rx="32" ry="28" fill="#ffc8e4" opacity="0.5"/>
+        <!-- Paws -->
+        <ellipse cx="65" cy="200" rx="16" ry="10" fill="#ffb3d1"/>
+        <ellipse cx="135" cy="200" rx="16" ry="10" fill="#ffb3d1"/>
+        <!-- Small heart on tummy -->
+        <text x="100" y="175" font-size="20" text-anchor="middle">💕</text>
+      </svg>
+    </div>
+  </div>
+
+  <h1 class="main-title">Happy Anniversary<br>Cuddle Bum 🌸</h1>
+  <p class="subtitle">Aik saal pehle, ek fight se shuru hua tha 😅💕</p>
+  <div class="date-badge">💌 June 6, 2025 → June 6, 2026 💌</div>
+</section>
+
+<!-- LETTER SECTION -->
+<section class="letter-section reveal">
+  <div class="letter-card">
+    <div class="letter-text">
+      <p>Dear <span class="highlight">Amna</span>, meri cute bunny, meri <span class="highlight">Cuddle Bum</span>,</p>
+      <br>
+      <p>Yaad hai? Hum ek <span class="highlight">fight se mile the</span> — matlab sahi fight, jahan main zyada confident tha ke main sahi hoon 😅 aur tu bilkul convinced thi ke tujhe kuch nahi pata. Aur phir... <span class="highlight">sab kuch badal gaya</span>.</p>
+      <br>
+      <p>Honestly bolun? Tune mujhe <span class="highlight">aisa kisi ne kabhi nahi samjha</span> jaise tune samjha. Teri ek baat, ek simple sa message, aur main completely gone tha. Tu doesn't even realize how <span class="highlight">effortlessly tu har cheez perfect karti hai</span>. Teri hassi, teri shararatein, tera gussa bhi — sab kuch <span class="highlight">mujhe pagal karta hai</span> literally.</p>
+      <br>
+      <p>Jab maine tujhe <span class="highlight">apni jersey di</span>, I wanted a piece of me with you always. Teri ponytail jo tune mujhe di 🎀 — main iss cheez ko kuch bhi dene se zyada protect karta hun. Aur <span class="highlight">wo hoodie</span> jo maine tujhe di — I hope tu isme wrap ho ke mujhe feel karti hai jab main paas nahi hota. Aur tera woh <span class="highlight">shirt jo tune mujhe diya</span> — main jaanta hun tu isko dekhke smile karti hai.</p>
+      <br>
+      <p>Tu literally meri sabse <span class="highlight">favorite person hai</span>. Meri <span class="highlight">cute bunny</span>. Meri <span class="highlight">Cuddle Bum</span>. Jo pehle fight karti thi aur ab still fight karti hai — but now main hamesha <span class="highlight">lose karna chahta hun</span> just to see your face win. 😭💕</p>
+      <br>
+      <p>Happy anniversary, <span class="highlight">meri jaan</span>. Tumse bahut pyaar hai — <span class="urdu-touch">tumhare bina sab kuch khaali lagta hai</span> 🌸</p>
+      <br>
+      <p style="text-align: right; font-size: 1.3em; color: var(--deep-rose);">— Tumhara 💍🏈</p>
+    </div>
+  </div>
+</section>
+
+<!-- GIFTS SECTION -->
+<section class="gifts-section reveal">
+  <h2 class="section-title">Our Little Exchange 🎁</h2>
+  <div class="gifts-grid">
+    <div class="gift-card">
+      <span class="gift-emoji">🏈</span>
+      <div class="gift-label">My Jersey</div>
+      <div class="gift-desc">A piece of me, always with you</div>
+      <span class="gift-tag tag-gave">I gave her</span>
+    </div>
+    <div class="gift-card">
+      <span class="gift-emoji">💍</span>
+      <div class="gift-label">Ring</div>
+      <div class="gift-desc">Sealed with love</div>
+      <span class="gift-tag tag-gave">I gave her</span>
+    </div>
+    <div class="gift-card">
+      <span class="gift-emoji">🧥</span>
+      <div class="gift-label">Hoodie</div>
+      <div class="gift-desc">Wrap yourself in me 🥺</div>
+      <span class="gift-tag tag-gave">I gave her</span>
+    </div>
+    <div class="gift-card">
+      <span class="gift-emoji">🎀</span>
+      <div class="gift-label">Her Poni</div>
+      <div class="gift-desc">The most precious thing she gave</div>
+      <span class="gift-tag tag-got">She gave me</span>
+    </div>
+    <div class="gift-card">
+      <span class="gift-emoji">👕</span>
+      <div class="gift-label">Her Shirt</div>
+      <div class="gift-desc">I wear it with all the feels</div>
+      <span class="gift-tag tag-got">She gave me</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR SECTION -->
+<section class="calendar-section reveal">
+  <h2 class="section-title">Our Special Day 📅</h2>
+  <div class="calendar-wrapper">
+    <div class="cal-header">
+      <button class="cal-nav" id="prevBtn">‹</button>
+      <span id="calMonthYear">June 2026</span>
+      <button class="cal-nav" id="nextBtn">›</button>
+    </div>
+    <div class="cal-days-header">
+      <div class="cal-day-name">Sun</div>
+      <div class="cal-day-name">Mon</div>
+      <div class="cal-day-name">Tue</div>
+      <div class="cal-day-name">Wed</div>
+      <div class="cal-day-name">Thu</div>
+      <div class="cal-day-name">Fri</div>
+      <div class="cal-day-name">Sat</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend">
+      <div class="legend-item">
+        <div class="legend-dot"></div>
+        <span>Our Anniversary (June 6)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot today-dot"></div>
+        <span>Today</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORY QUOTE -->
+<section class="memory-section reveal">
+  <h2 class="section-title">One Thing I'll Never Forget 💭</h2>
+  <div class="memory-card">
+    <p class="memory-text">
+      "Wo pehli fight... jo actually meri favorite cheez ban gayi. Kyunki usi din se tu meri zindagi mein aayi. 
+      Aur mujhe pata tha — yeh larki kuch alag hai. Tu actually <strong>meri favorite mistake hai</strong> 
+      — jo actually mistake nahi thi. Wo pehla message, wo pehla argument — 
+      I'd relive it a thousand times just to meet you again. 💕"
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">
+    Ek saal ho gaya, meri Cuddle Bum 🐰<br>
+    Aur main har roz aur zyada pyaar karta hun tumse 💕
+  </div>
+  <div class="footer-sub">June 6, 2025 — The day that changed everything 🌸</div>
+</footer>
+
+<script>
+  // FLOATING HEARTS
+  const container = document.getElementById('heartsContainer');
+  const emojis = ['💕', '💗', '🌸', '💖', '✨', '🌷', '💝', '🎀'];
+  
+  function createHeart() {
+    const el = document.createElement('div');
+    el.className = 'heart-float';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (12 + Math.random() * 20) + 'px';
+    el.style.animationDuration = (8 + Math.random() * 12) + 's';
+    el.style.animationDelay = (Math.random() * 5) + 's';
+    container.appendChild(el);
+    setTimeout(() => el.remove(), 20000);
+  }
+
+  setInterval(createHeart, 600);
+  for (let i = 0; i < 15; i++) setTimeout(createHeart, i * 200);
+
+  // SPARKLE ON CLICK
+  document.addEventListener('click', (e) => {
+    const sparks = ['✨', '💕', '🌸', '💖', '⭐'];
+    for (let i = 0; i < 5; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.textContent = sparks[Math.floor(Math.random() * sparks.length)];
+      s.style.left = (e.clientX + (Math.random() - 0.5) * 60) + 'px';
+      s.style.top = (e.clientY + (Math.random() - 0.5) * 60) + 'px';
+      s.style.position = 'fixed';
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1500);
+    }
+  });
+
+  // CALENDAR
+  const ANNIV_MONTH = 5; // June (0-indexed)
+  const ANNIV_DAY = 6;
+  const ANNIV_YEAR_START = 2025;
+
+  let currentDate = new Date(2026, 5, 1); // Start on June 2026
+
+  function renderCalendar() {
+    const grid = document.getElementById('calGrid');
+    const monthYear = document.getElementById('calMonthYear');
+    grid.innerHTML = '';
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const today = new Date();
+
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    monthYear.textContent = months[month] + ' ' + year;
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInPrev = new Date(year, month, 0).getDate();
+
+    // Previous month days
+    for (let i = firstDay - 1; i >= 0; i--) {
+      const d = document.createElement('div');
+      d.className = 'cal-day other-month';
+      d.textContent = daysInPrev - i;
+      grid.appendChild(d);
+    }
+
+    // Current month days
+    for (let d = 1; d <= daysInMonth; d++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day';
+      el.textContent = d;
+
+      // Is today?
+      if (d === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+        el.classList.add('today');
+      }
+
+      // Is anniversary? (June 6 every year from 2025+)
+      if (month === ANNIV_MONTH && d === ANNIV_DAY && year >= ANNIV_YEAR_START) {
+        el.classList.add('anniversary');
+        el.title = '💕 Our Anniversary!';
+      }
+
+      grid.appendChild(el);
+    }
+
+    // Next month padding
+    const total = firstDay + daysInMonth;
+    const remaining = 42 - total;
+    for (let d = 1; d <= remaining; d++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day other-month';
+      el.textContent = d;
+      grid.appendChild(el);
+    }
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+  });
+
+  renderCalendar();
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
